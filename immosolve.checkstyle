@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: Solve.IT_develop
+    Description: none
+-->
+<module name="Checker">
+  <property name="severity" value="warning"/>
+  <module name="TreeWalker">
+    <module name="ConstantName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[A-ZÄÖÜ][A-ZÄÖÜ0-9]*(_[A-Z0-9]+)*$"/>
+    </module>
+    <module name="LocalFinalVariableName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+    </module>
+    <module name="LocalVariableName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+    </module>
+    <module name="MemberName">
+      <property name="severity" value="error"/>
+      <property name="applyToPrivate" value="false"/>
+      <property name="format" value="^[a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="not private"/>
+    </module>
+    <module name="MethodName">
+      <property name="format" value="^[_a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="shouldn't contain '_'"/>
+    </module>
+    <module name="PackageName">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="ParameterName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+    </module>
+    <module name="StaticVariableName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+    </module>
+    <module name="TypeName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[A-ZÄÖÜ][a-zäöüA-ZÄÖÜ0-9]*$"/>
+    </module>
+    <module name="MemberName">
+      <property name="applyToPublic" value="false"/>
+      <property name="applyToProtected" value="false"/>
+      <property name="applyToPackage" value="false"/>
+      <property name="format" value="^[_a-zäöü][a-zäöüA-ZÄÖÜ0-9]*$"/>
+      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="private"/>
+    </module>
+    <module name="ModifierOrder">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="RedundantModifier">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="IllegalInstantiation">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="NeedBraces">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="LeftCurly">
+      <property name="maxLineLength" value="150"/>
+    </module>
+    <module name="SimplifyBooleanExpression"/>
+    <module name="EmptyBlock">
+      <property name="severity" value="error"/>
+      <property name="option" value="text"/>
+      <property name="tokens" value="LITERAL_CATCH"/>
+      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Empty catch blocks must be commented or filled with code"/>
+    </module>
+    <module name="MethodName">
+      <property name="severity" value="error"/>
+      <property name="format" value="^[_a-zäöü][_a-zäöüA-ZÄÖÜ0-9]*$"/>
+      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="minimum convention"/>
+    </module>
+    <module name="HideUtilityClassConstructor">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="Regexp">
+      <metadata name="net.sf.eclipsecs.core.comment" value="No empty line between comment and method"/>
+      <property name="severity" value="error"/>
+      <property name="format" value="\*\/\n\n\s*(public|protected|private)"/>
+      <property name="message" value="Please remove the empty line between the comment and the method/class"/>
+      <property name="illegalPattern" value="true"/>
+      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Method / class comments shoudn't have a gap to the method / class to which they belong."/>
+    </module>
+    <module name="RegexpSinglelineJava">
+      <metadata name="net.sf.eclipsecs.core.comment" value="StringBuffer shouldn't be used&quot;"/>
+      <property name="severity" value="error"/>
+      <property name="id" value="no_string_buffer"/>
+      <property name="format" value="\sStringBuffer\("/>
+      <property name="message" value="Please use StringBuilder instead of StringBuffer"/>
+    </module>
+    <module name="Regexp">
+      <metadata name="net.sf.eclipsecs.core.comment" value="tabs instead of spaces"/>
+      <property name="severity" value="error"/>
+      <property name="format" value="^    "/>
+      <property name="message" value="Please use tabs instead of spaced as indent"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+    <module name="Regexp">
+      <metadata name="net.sf.eclipsecs.core.comment" value="use Solve.IT LogFactory"/>
+      <property name="severity" value="error"/>
+      <property name="format" value="^\s*import org.apache.commons.logging.LogFactory;$"/>
+      <property name="message" value="Please use de.solveit.logging.LogFactory instead"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+  </module>
+  <module name="RegexpHeader">
+    <property name="severity" value="error"/>
+    <property name="header" value="^// \*{117}\n// \* \(C\) [0-9]{4} Immosolve GmbH, Tegelbarg 43, 24576 Bad Bramstedt\n// \*{117}\n^$"/>
+    <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Solve.IT header"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="severity" value="error"/>
+    <property name="format" value="^\s*\\\\\\\\"/>
+    <property name="message" value="Don't use comments that start with four slashes"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="severity" value="error"/>
+    <property name="format" value="// --- Configuration Management Information ---"/>
+    <property name="message" value="Please don't use this footer anymore. It raises more problems that it tries to solve (comparing, merging) ..."/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="severity" value="error"/>
+    <property name="format" value="[fF]\.e\."/>
+    <property name="message" value="Please use &quot;e.g.&quot; instead of &quot;f.e.&quot;"/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="static imports for Assessor calls"/>
+    <property name="severity" value="error"/>
+    <property name="id" value="static_assessor_imports"/>
+    <property name="format" value="[^\.]Assessor\s*\.is"/>
+    <property name="message" value="Please use static imports for Assessor calls"/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="static imports for Converter calls"/>
+    <property name="severity" value="error"/>
+    <property name="id" value="static_converter_imports"/>
+    <property name="format" value="[^\.a-zA-Z0-9]Converter\s*\.[a-z](?!oString\()"/>
+    <property name="message" value="Please use static imports for Converter calls"/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="Check for correct code formatter. The default built in formatter destroyes lines of format &quot;///////...&quot;"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^\s*//\s+///+$"/>
+    <property name="message" value="Comment separators shouldn''t contain spaces. Please make sure that you use a Solve.IT code formatter."/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="comment should be read"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="FIXME: implement this method stub or remove the comment"/>
+    <property name="message" value="I know that it is annoying, but please fix this :-)"/>
+    <property name="ignoreCase" value="true"/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="don't unse printStackTrace()"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^((?!//).)*\.printStackTrace\(\)"/>
+    <property name="message" value="Please try to use a logger instead of printStackTrace()."/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="Comments should start with exactly one space"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="/\*\*[\n\r]+\s*\*[ \t][ \t]+"/>
+    <property name="message" value="Multiline comments should start with exactly one space in the second line"/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="Commens should start with exactly one space"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^/\*\*[ \t][ \t]+"/>
+    <property name="message" value="Commens should start with exactly one space"/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="parameter without comment"/>
+    <property name="severity" value="warning"/>
+    <property name="format" value="^\s*\*\s*\@param\s*[^\s]+\s*$"/>
+    <property name="message" value="Please comment this parameter or remove it when it is self explaining."/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="return without comment"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^\s*\*\s*\@return\s*$"/>
+    <property name="message" value="Please comment this return value or remove it when it is self explaining."/>
+  </module>
+  <module name="RegexpSingleline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="throws without comment"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^\s*\*\s*\@throws\s*+[^\s]+\s*$"/>
+    <property name="message" value="Please comment this exception or remove it when it is self explaining."/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="comments shouldn't begin with empty lines"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^[ \t]*/\*\*\s*[\n\r]+\s*\*\s*[\n\r]+"/>
+    <property name="message" value="Please remove empty lines at the beginning of comments or remove empty comments completely."/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="comments shouldn't contain many empty lines"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^\s+\*\s*[\n\r]+\s+\*\s*[\n\r]+"/>
+    <property name="message" value="One empty line should be enoug to separate comment blocks."/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="comments shouldn't end with an empty line"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="^[ \t]*\*\s*[\n\r]+\s+\*/$"/>
+    <property name="message" value="Please remove empty lines at the end of comments."/>
+  </module>
+  <module name="RegexpMultiline">
+    <metadata name="net.sf.eclipsecs.core.comment" value="file should end with EOL"/>
+    <property name="severity" value="error"/>
+    <property name="format" value="[^\n\r]\z"/>
+    <property name="message" value="File should end with EOL."/>
+  </module>
+</module>
